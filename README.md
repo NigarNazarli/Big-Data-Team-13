@@ -1,135 +1,95 @@
-# Big-Data-Team-13
-🌟 LGD Prediction Using Apache Spark
-Credit Risk Modeling • Machine Learning • Big Data Processing
-<p align="center"> <img src="https://img.shields.io/badge/Spark-3.4.2-orange?logo=apache-spark&logoColor=white" /> <img src="https://img.shields.io/badge/PySpark-MLlib-blue?logo=python&logoColor=white" /> <img src="https://img.shields.io/badge/Python-3.10-green?logo=python" /> <img src="https://img.shields.io/badge/Jupyter-Notebook-orange?logo=jupyter" /> </p>
-📘 Project Overview
+# 🌟 LGD Prediction Using Apache Spark  
+### *Credit Risk Modeling • Machine Learning • Big Data • Visual Analytics*
 
-This project implements an end-to-end Loss Given Default (LGD) prediction model using Apache Spark MLlib, enabling efficient large-scale credit-risk modeling.
+<p align="center">
+  <img src="https://img.shields.io/badge/Spark-3.4.2-orange?logo=apache-spark&logoColor=white" />
+  <img src="https://img.shields.io/badge/PySpark-MLlib-blue?logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/Python-3.10-green?logo=python" />
+  <img src="https://img.shields.io/badge/Jupyter-Notebook-orange?logo=jupyter" />
+  <img src="https://img.shields.io/badge/EDA-Visualizations-purple" />
+</p>
 
-The notebook performs:
+---
 
-Data loading & cleaning
+## 📘 Project Overview
 
-Outlier treatment
+This repository contains a complete **LGD (Loss Given Default) prediction workflow** built with **Apache Spark** and supported by a second notebook for **visual exploration and insights**.
 
-Feature engineering with window functions
+The project includes:
 
-Encoding & scaling
+- Scalable Spark-based data preprocessing  
+- Advanced feature engineering  
+- ML model pipeline for LGD prediction  
+- Model evaluation  
+- Deployment prediction  
+- Rich exploratory visualizations (Matplotlib, Seaborn)  
 
-Spark ML linear regression
+---
 
-Performance evaluation
+# 🚀 Notebook 1: LGD_Prediction_Spark.ipynb  
+### *Spark-Based Data Processing & Machine Learning Pipeline*
 
-Deployment predictions
+This notebook performs the entire modeling pipeline using **PySpark**:
 
-The final model predicts LGD for new loan observations with high generalization accuracy.
+### 🔍 **Data Preparation**
+- Clean numeric formatting (`,` → `.`)
+- Convert columns to numeric types  
+- Handle missing values  
+- Outlier correction using IQR method  
 
-⚙️ Technologies Used
+### 🧠 **Feature Engineering**
+Using Spark Window Functions:
 
-Apache Spark 3.4.x
+- `Defaults_mean_by_Credit_Score`
+- `Income_mean_by_Region`
 
-PySpark SQL + MLlib
+### 🤖 **Machine Learning Pipeline**
+Built using Spark MLlib:
 
-Python 3.10
+- `StringIndexer`
+- `OneHotEncoder`
+- `VectorAssembler`
+- `StandardScaler`
+- `LinearRegression`
 
-Pandas (for EDA sections)
+### 📈 **Model Performance**
 
-SciPy / NumPy
+| Metric | Train | Test |
+|--------|--------|---------|
+| **MAE** | ~0.118 | ~0.118 |
+| **RMSE** | ~0.145 | ~0.144 |
+| **R²** | ~0.820 | ~0.824 |
 
-Jupyter Notebook
+The model demonstrates strong generalization and excellent predictive capability for credit LGD.
 
-📂 Repository Structure
-📁 project/
-│
-├── LGD_Prediction_Spark.ipynb     # Main notebook (Spark implementation)
-├── lgd_data.csv                   # Training dataset
-├── lgd_deploy.csv                 # Deployment dataset
-└── README.md                      # Project documentation
+### 🔮 **Deployment**
+The trained pipeline is applied to a second dataset to generate **LGD predictions for new loan applicants**.
 
-🚀 Key Features
-🔍 1. Data Preprocessing
+---
 
-Handles missing values
+# 📊 Notebook 2: Visuals-new.ipynb  
+### *Comprehensive EDA & Visual Insights*
 
-Normalizes European decimal formatting (, → .)
+This notebook contains **visualizations and statistical insights** using Pandas, Matplotlib, and Seaborn.
 
-Converts numeric columns to proper types
+### 📌 Included Plots:
+- Distribution plots for key numeric variables  
+- Boxplots to identify outliers  
+- Heatmap of feature correlations  
+- LGD distribution analysis  
+- Scatterplots of LGD vs predictors  
+- Categorical variable bar charts  
+- Pairwise relationships  
 
-Removes extreme outliers using IQR
+### 🎯 Purpose of the Visuals Notebook
+- Understand variable behavior  
+- Support feature engineering decisions  
+- Identify non-normal distributions  
+- Highlight important predictors  
+- Provide material for reporting & presentations  
 
-🧠 2. Feature Engineering
+The visuals complement the Spark ML notebook by offering clarity and intuition behind the modeling strategy.
 
-Mean defaults per credit score
 
-Mean income per region
 
-Additional statistical enrichments using Spark’s Window functions
 
-🤖 3. Machine Learning Pipeline
-
-Implemented using Spark MLlib Pipeline API:
-
-StringIndexer
-
-OneHotEncoder
-
-VectorAssembler
-
-StandardScaler
-
-LinearRegression
-
-📈 4. Evaluation
-
-Metrics reported:
-
-Metric	Train	Test
-MAE	~0.118	~0.118
-RMSE	~0.145	~0.144
-R²	~0.820	~0.824
-
-➡️ High generalization and strong predictive performance.
-
-🔮 5. Deployment Phase
-
-A separate dataset is processed through the same pipeline to generate:
-
-Predicted LGD values for new loans.
-
-🛠️ How to Run
-1️⃣ Install Dependencies
-pip install pyspark pandas numpy scipy notebook
-
-2️⃣ Start Jupyter
-jupyter notebook
-
-3️⃣ Open the Notebook & Run All Cells
-
-Make sure:
-
-Spark is installed (v3.4.x)
-
-Java 8 is configured
-
-File paths match your local environment
-
-📊 Notebook Workflow
-1. Load dataset (CSV)
-2. Clean numeric formatting & handle missing values
-3. Outlier removal (IQR)
-4. Feature engineering using Spark Window functions
-5. Categorical encoding and feature scaling
-6. Train-test split
-7. Linear Regression training
-8. Evaluation (MAE, RMSE, R²)
-9. Deployment predictions
-10. Pandas-based EDA (optional)
-
-🧪 Output (Model Performance)
-Train MAE: 0.11797
-Train RMSE: 0.14459
-Train R2: 0.81975
-
-Test MAE: 0.11768
-Test RMSE: 0.14407
-Test R2: 0.82420
