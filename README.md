@@ -1,4 +1,4 @@
-# 🌟 LGD Prediction Using Apache Spark  
+#  LGD Prediction Using Apache Spark  
 ### *Credit Risk Modeling • Machine Learning • Big Data • Visual Analytics*
 
 <p align="center">
@@ -11,7 +11,7 @@
 
 ---
 
-## 📘 Project Overview
+##  Project Overview
 
 This repository contains a complete **LGD (Loss Given Default) prediction workflow** built with **Apache Spark** and supported by a second notebook for **visual exploration and insights**.
 
@@ -26,24 +26,24 @@ The project includes:
 
 ---
 
-# 🚀 Notebook 1: LGD_Prediction_Spark.ipynb  
+#  Notebook 1: LGD_Prediction_Spark.ipynb  
 ### *Spark-Based Data Processing & Machine Learning Pipeline*
 
 This notebook performs the entire modeling pipeline using **PySpark**:
 
-### 🔍 **Data Preparation**
+###  **Data Preparation**
 - Clean numeric formatting (`,` → `.`)
 - Convert columns to numeric types  
 - Handle missing values  
 - Outlier correction using IQR method  
 
-### 🧠 **Feature Engineering**
+###  **Feature Engineering**
 Using Spark Window Functions:
 
 - `Defaults_mean_by_Credit_Score`
 - `Income_mean_by_Region`
 
-### 🤖 **Machine Learning Pipeline**
+###  **Machine Learning Pipeline**
 Built using Spark MLlib:
 
 - `StringIndexer`
@@ -52,7 +52,7 @@ Built using Spark MLlib:
 - `StandardScaler`
 - `LinearRegression`
 
-### 📈 **Model Performance**
+###  **Model Performance**
 
 | Metric | Train | Test |
 |--------|--------|---------|
@@ -62,17 +62,17 @@ Built using Spark MLlib:
 
 The model demonstrates strong generalization and excellent predictive capability for credit LGD.
 
-### 🔮 **Deployment**
+###  **Deployment**
 The trained pipeline is applied to a second dataset to generate **LGD predictions for new loan applicants**.
 
 ---
 
-# 📊 Notebook 2: Visuals-new.ipynb  
+#  Notebook 2: Visuals-new.ipynb  
 ### *Comprehensive EDA & Visual Insights*
 
 This notebook contains **visualizations and statistical insights** using Pandas, Matplotlib, and Seaborn.
 
-### 📌 Included Plots:
+###  Included Plots:
 - Distribution plots for key numeric variables  
 - Boxplots to identify outliers  
 - Heatmap of feature correlations  
@@ -81,7 +81,7 @@ This notebook contains **visualizations and statistical insights** using Pandas,
 - Categorical variable bar charts  
 - Pairwise relationships  
 
-### 🎯 Purpose of the Visuals Notebook
+###  Purpose of the Visuals Notebook
 - Understand variable behavior  
 - Support feature engineering decisions  
 - Identify non-normal distributions  
